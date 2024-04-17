@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/main.css">
     <title>Haggling 101</title>
 </head>
@@ -14,17 +15,18 @@
                 <a href="/" class="nav-link">Home</a>
                 <div class="progress-indicator active"></div>
             </li>
+            <!-- The 'active' class is now on the 'Intro' indicator -->
             <li class="nav-item">
-                <span class="nav-link">Intro</span>
-                <span class="progress-indicator"></span>
+                <a href="/intro" class="nav-link">Intro</a>
+                <div class="progress-indicator"></div>
             </li>
             <li class="nav-item">
-                <span class="nav-link">Strategies</span>
-                <span class="progress-indicator"></span>
+                <a href="/strategies" class="nav-link">Strategies</a>
+                <div class="progress-indicator"></div>
             </li>
             <li class="nav-item">
-                <span class="nav-link">Quiz</span>
-                <span class="progress-indicator"></span>
+                <a href="/quiz" class="nav-link">Quiz</a>
+                <div class="progress-indicator"></div>
             </li>
         </ul>
         <div class="line"></div>
@@ -40,7 +42,9 @@
         </section>
     </main>
     <script>
-        // Add any JavaScript you need here.
+         document.querySelector('.next-arrow').addEventListener('click', function() {
+            window.location.href = '/intro'; // Assuming this is the next tutorial step
+        });
     </script>
 </body>
 </html>

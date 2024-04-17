@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Intro - Haggling 101</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+                <div class="progress-indicator"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/intro" class="nav-link">Intro</a>
+                <div class="progress-indicator active"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/strategies" class="nav-link">Strategies</a>
+                <div class="progress-indicator"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz</a>
+                <div class="progress-indicator"></div>
+            </li>
+        </ul>
+        <div class="line"></div>
+    </div>
+    <main class="content">
+        <div class="two-column-grid">
+            <div>
+
+                <h2 class="section-title">WHY HAGGLE?</h2>
+                <p>
+                    Most people won't haggle because they A. Have never learned how, or B. Feel bad doing it. Don't feel bad. They won't sell you something if they won't make a profit from it in some way. They may even sell it to you below cost to get higher sales numbers that month. They won't sell you something if they aren't profiting from it in some way.
+                </p>
+                <img src="https://cdn2.ramseysolutions.net/dynamic-webp/media/blog/budgeting/spending/how-to-haggle.jpg/640w.webp" alt="car haggle example">
+            </div>
+            <div>
+                <h2 class="section-title">COMMON ITEMS</h2>
+                <ul class="common-items">
+                    <li>Cars (purchase / maintenance / accessories)</li>
+                    <li>Matresses</li>
+                    <li>Furniture</li>
+                    <li>ANYTHING Pre-owned</li>
+                    <li>Apartment Rent (not often, but I've done it)</li>
+                    <li>Cable / Satellite</li>
+                    <li>One-time Membership Costs (Gym, etc.)</li>
+                    <li>Electronics</li>
+                    <li>Hotels (bigger is better, smaller ones tend not to be negotiable)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="next-arrow">></div>
+    </main>
+    <script>
+        document.querySelector('.next-arrow').addEventListener('click', function() {
+            window.location.href = '/strategies'; // Assuming this is the next tutorial step
+        });
+    </script>
+</body>
+</html>
