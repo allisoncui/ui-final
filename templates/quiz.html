@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
-    <title>Intro - Haggling 101</title>
+    <title>Quiz - Haggling 101</title>
 </head>
 <body>
     <div class="navbar-container">
@@ -30,13 +30,30 @@
         <div class="line"></div>
     </div>
     <main class="content">
-        To be implemented
+        <h1>{{ question_data.question }}</h1>
+        <form id="quiz-form" method="POST" action="/quiz/result">
+            {% for choice in question_data.choices %}
+            <div>
+                <input type="radio" name="choice" value="{{ choice }}" id="choice-{{ loop.index }}" required>
+                <label for="choice-{{ loop.index }}">{{ choice }}</label>
+            </div>
+            {% endfor %}
+            <input type="hidden" name="correct_answer" value="{{ question_data.correct_answer }}">
+            <button type="submit">Submit</button>
+        </form>
     </main>
+
     <script>
         // JavaScript for the next-arrow click event to navigate to the next page
         document.querySelector('.next-arrow').addEventListener('click', function() {
             window.location.href = '/quiz'; // Assuming this is the next tutorial step
         });
+    </script>
+	    <script>
+        document.getElementById('quiz-form').onsubmit = function() {
+            // Optionally, you can add some JavaScript to validate the form before submitting
+            return true; // Return false to prevent submission if needed
+        };
     </script>
 </body>
 </html>
