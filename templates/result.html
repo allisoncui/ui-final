@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Quiz Result - Haggling 101</title>
+</head>
+<body>
+    <div class="navbar-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+                <div class="progress-indicator"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/intro" class="nav-link">Intro</a>
+                <div class="progress-indicator"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/strategies" class="nav-link">Strategies</a>
+                <div class="progress-indicator"></div>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz</a>
+                <div class="progress-indicator active"></div>
+            </li>
+        </ul>
+        <div class="line"></div>
+    </div>
+    <main class="content">
+        <div class="quiz-result-container">
+            <h1 class="quiz-result-title">Quiz Result</h1>
+            <p class="quiz-result-text">Congratulations! You got a score of <span class="quiz-score">{{ score }}/1</span>!</p>
+            <a href="/quiz" class="quiz-retake-button">Retake Quiz</a>
+        </div>
+    </main>
+</body>
+</html>
