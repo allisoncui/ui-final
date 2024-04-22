@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,31 @@
     <link rel="stylesheet" href="static/main.css">
     <title>Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
-            <!-- Repeating for each nav item -->
             <li class="nav-item">
-                <a href="/" class="nav-link">Home</a>
-                <div class="progress-indicator active"></div>
-            </li>
-            <!-- The 'active' class is now on the 'Intro' indicator -->
-            <li class="nav-item">
-                <a href="/intro" class="nav-link">Intro</a>
-                <div class="progress-indicator"></div>
+                <a href="/" class="nav-link activetext">Home
+                    <div class="progress-indicator active"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/strategies" class="nav-link">Strategies</a>
-                <div class="progress-indicator"></div>
+                <a href="/intro" class="nav-link">Intro
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/quiz" class="nav-link">Quiz</a>
-                <div class="progress-indicator"></div>
+                <a href="/strategies" class="nav-link">Strategies
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
         </ul>
-        <div class="line"></div>
     </div>
     <main>
         <section class="hero">
@@ -37,14 +40,24 @@
             <div class="author-box">
                 <span class="author-names">ALLISON CUI, KEVIN MA, ASHESH AMATYA</span>
             </div>
-            <p class="intro-text">Haggling is one of the most useful skills you can have in life, as it can possibly save you tens of thousands of dollars. This tutorial will teach you how to negotiate like a pro without feeling bad about it.</p>
-            <div class="next-arrow">></div>
+            <div class="intro-box">
+                <p class="intro-text">Haggling is one of the most useful skills you can have in life, as it can possibly
+                    save you tens of thousands of dollars. This tutorial will teach you how to negotiate like a pro
+                    without feeling bad about it.</p>
+            </div>
+            <div class="arrow-container">
+                <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </div>
         </section>
     </main>
     <script>
-         document.querySelector('.next-arrow').addEventListener('click', function() {
+        document.querySelector('.next-arrow').addEventListener('click', function () {
             window.location.href = '/intro'; // Assuming this is the next tutorial step
         });
     </script>
 </body>
+
 </html>

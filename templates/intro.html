@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,29 @@
     <style>
     </style>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="/" class="nav-link">Home</a>
-                <div class="progress-indicator"></div>
+                <a href="/" class="nav-link">Home
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/intro" class="nav-link">Intro</a>
-                <div class="progress-indicator active"></div>
+                <a href="/intro" class="nav-link activetext">Intro
+                    <div class="progress-indicator active"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/strategies" class="nav-link">Strategies</a>
-                <div class="progress-indicator"></div>
+                <a href="/strategies" class="nav-link">Strategies
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/quiz" class="nav-link">Quiz</a>
-                <div class="progress-indicator"></div>
+                <a href="/quiz" class="nav-link">Quiz
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
         </ul>
         <div class="line"></div>
@@ -36,10 +42,14 @@
             <div>
 
                 <h2 class="section-title">WHY HAGGLE?</h2>
-                <p>
-                    Most people won't haggle because they A. Have never learned how, or B. Feel bad doing it. Don't feel bad. They won't sell you something if they won't make a profit from it in some way. They may even sell it to you below cost to get higher sales numbers that month. They won't sell you something if they aren't profiting from it in some way.
+                <p class="common-items">
+                    Most people won't haggle because they A. Have never learned how, or B. Feel bad doing it. Don't feel
+                    bad. They won't sell you something if they won't make a profit from it in some way. They may even
+                    sell it to you below cost to get higher sales numbers that month. They won't sell you something if
+                    they aren't profiting from it in some way.
                 </p>
-                <img src="https://cdn2.ramseysolutions.net/dynamic-webp/media/blog/budgeting/spending/how-to-haggle.jpg/640w.webp" alt="car haggle example">
+                <img src="https://cdn2.ramseysolutions.net/dynamic-webp/media/blog/budgeting/spending/how-to-haggle.jpg/640w.webp"
+                    alt="car haggle example">
             </div>
             <div>
                 <h2 class="section-title">COMMON ITEMS</h2>
@@ -56,12 +66,18 @@
                 </ul>
             </div>
         </div>
-        <div class="next-arrow">></div>
+        <div class="arrow-container">
+            <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
     </main>
     <script>
-        document.querySelector('.next-arrow').addEventListener('click', function() {
+        document.querySelector('.next-arrow').addEventListener('click', function () {
             window.location.href = '/strategies'; // Assuming this is the next tutorial step
         });
     </script>
 </body>
+
 </html>

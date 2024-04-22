@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
-    <title>Intro - Haggling 101</title>
+    <title>Strategies - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="/" class="nav-link">Home</a>
-                <div class="progress-indicator"></div>
-            </li>
-            <!-- The 'active' class is now on the 'Intro' indicator -->
-            <li class="nav-item">
-                <a href="/intro" class="nav-link">Intro</a>
-                <div class="progress-indicator"></div>
+                <a href="/" class="nav-link">Home
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/strategies" class="nav-link">Strategies</a>
-                <div class="progress-indicator active"></div>
+                <a href="/intro" class="nav-link">Intro
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/quiz" class="nav-link">Quiz</a>
-                <div class="progress-indicator"></div>
+                <a href="/strategies" class="nav-link activetext">Strategies
+                    <div class="progress-indicator active"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
         </ul>
         <div class="line"></div>
     </div>
     <main class="content">
-        <h1>HOW TO HAGGLE</h1>
-        <p>Click on each of the following to learn about haggling strategies and approaches.</p>
+        <div class="strat-title">HOW TO HAGGLE</div>
+        <p class="caption">Click on each of the following to learn about haggling strategies and approaches.</p>
         <div class="strategies-container">
             <div class="strategy" id="opening">
                 <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy">
@@ -42,18 +47,25 @@
                 <h2>IMPERFECTION</h2>
             </div>
             <div class="strategy" id="king-cash">
-                <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg" alt="King Cash Strategy">
+                <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg"
+                    alt="King Cash Strategy">
                 <h2>KING CASH</h2>
             </div>
         </div>
-		<div class="next-arrow">></div>
+        <div class="arrow-container">
+            <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
     </main>
 
     <script>
         // JavaScript for the next-arrow click event to navigate to the next page
-        document.querySelector('.next-arrow').addEventListener('click', function() {
+        document.querySelector('.next-arrow').addEventListener('click', function () {
             window.location.href = '/quiz'; // Assuming this is the next tutorial step
         });
     </script>
 </body>
+
 </html>

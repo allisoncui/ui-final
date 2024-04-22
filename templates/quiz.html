@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>Quiz - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="/" class="nav-link">Home</a>
-                <div class="progress-indicator"></div>
-            </li>
-            <!-- The 'active' class is now on the 'Intro' indicator -->
-            <li class="nav-item">
-                <a href="/intro" class="nav-link">Intro</a>
-                <div class="progress-indicator"></div>
+                <a href="/" class="nav-link">Home
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/strategies" class="nav-link">Strategies</a>
-                <div class="progress-indicator"></div>
+                <a href="/intro" class="nav-link">Intro
+                    <div class="progress-indicator"></div>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="/quiz" class="nav-link">Quiz</a>
-                <div class="progress-indicator active"></div>
+                <a href="/strategies" class="nav-link">Strategies
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link activetext">Quiz
+                    <div class="progress-indicator active"></div>
+                </a>
             </li>
         </ul>
         <div class="line"></div>
@@ -43,17 +48,23 @@
         </form>
     </main>
 
+    <div class="arrow-container">
+        <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+    </div>
+
     <script>
-        // JavaScript for the next-arrow click event to navigate to the next page
-        document.querySelector('.next-arrow').addEventListener('click', function() {
-            window.location.href = '/quiz'; // Assuming this is the next tutorial step
+        document.querySelector('.next-arrow').addEventListener('click', function () {
+            window.location.href = '/quiz';
         });
     </script>
-	    <script>
-        document.getElementById('quiz-form').onsubmit = function() {
-            // Optionally, you can add some JavaScript to validate the form before submitting
-            return true; // Return false to prevent submission if needed
+    <script>
+        document.getElementById('quiz-form').onsubmit = function () {
+            return true;
         };
     </script>
 </body>
+
 </html>
