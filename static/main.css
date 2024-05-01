@@ -259,3 +259,52 @@ button {
     margin-top: 10px;
     cursor: pointer;
 }
+
+.strategy-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.strategy-description {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.flowchart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.decision-box, .response-box {
+    padding: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.decision-box {
+    width: 20%;
+    background-color: #ccffcc; /* Light green for decision points */
+}
+
+.response-box {
+    width: 40%;
+    background-color: #ccccff; /* Light blue for responses */
+}
+.back-arrow a {
+    display: flex;
+    align-items: center;
+    color: #333; /* Adjust the color as needed */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space from the content */
+}
+
+.back-arrow svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    margin-right: 8px; /* Space between the icon and text */
+}

@@ -38,19 +38,26 @@
         <div class="strat-title">HOW TO HAGGLE</div>
         <p class="caption">Click on each of the following to learn about haggling strategies and approaches.</p>
         <div class="strategies-container">
-            <div class="strategy" id="opening">
-                <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy">
-                <h2>OPENING</h2>
-            </div>
+            <a href="{{ url_for('opening_strategy') }}" class="strategy-link">
+                <div class="strategy" id="opening">
+                    <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy">
+                    <h2>OPENING</h2>
+                </div>
+            </a>            
             <div class="strategy" id="imperfection">
-                <img src="https://blog.timesunion.com/kristi/files/2009/03/haggling2.jpg" alt="Imperfection Strategy">
-                <h2>IMPERFECTION</h2>
+                <a href="{{ url_for('imperfection_strategy') }}">
+                    <img src="https://blog.timesunion.com/kristi/files/2009/03/haggling2.jpg" alt="Imperfection Strategy">
+                    <h2>IMPERFECTION</h2>
+                </a>
             </div>
-            <div class="strategy" id="king-cash">
-                <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg"
-                    alt="King Cash Strategy">
-                <h2>KING CASH</h2>
+            <div class="strategy" id="king_cash">
+                <a href="{{ url_for('king_cash') }}">
+                    <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg"
+                        alt="King Cash Strategy">
+                    <h2>KING CASH</h2>
+                </a>
             </div>
+            
         </div>
         <div class="arrow-container">
             <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -59,13 +66,7 @@
             </svg>
         </div>
     </main>
-
-    <script>
-        // JavaScript for the next-arrow click event to navigate to the next page
-        document.querySelector('.next-arrow').addEventListener('click', function () {
-            window.location.href = '/quiz'; // Assuming this is the next tutorial step
-        });
-    </script>
+    <script src="static/app.js"></script>
 </body>
 
 </html>

@@ -11,10 +11,21 @@ def home():
 @app.route('/intro')
 def intro():
     return render_template('intro.html')
+@app.route('/opening_strategy')
+def opening_strategy():
+    return render_template('opening.html')
+
 @app.route('/strategies')
 def strategies():
     # Logic to render strategies page
     return render_template('strategies.html')
+@app.route('/imperfection')
+def imperfection_strategy():
+    return render_template('imperfection.html')
+
+@app.route('/king_cash')
+def king_cash():
+    return render_template('king_cash.html')
 
 @app.route('/quiz')
 def quiz():
