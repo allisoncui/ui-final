@@ -36,13 +36,40 @@
         <h1 class="strategy-title">OPENING</h1>
         <p class="strategy-description">THE BEST OPENING METHODS ARE THE SIMPLEST.</p>
         <p>Just ask "This is a bit more than I'm willing to pay, would you be willing to come down on the price?"</p>
-        <p>Scroll down for the most common responses at this point, and how you should act/think.</p>
         <div class="flowchart">
-            <div class="decision-box">YES</div>
             <div class="response-box">Response</div>
-            <div class="decision-box">NO</div>
+            <div class="flow-row">
+                <div class="arrow-container">
+                    <div class="arrow right"></div>
+                </div>
+                <div class="arrow-container">
+                    <div class="arrow right"></div>
+                </div>
+            </div>
+            <div class="flow-row">
+                <div class="decision-box negative">No</div>
+                <div class="decision-box positive">Yes</div>
+            </div>
+            <div class="flow-row">
+                <div class="response-box small">You're out of luck! But at least you tried, It's as simple as asking.</div>
+                <div class="response-box large">THEM: Let me ask my manager<br>THEM: Sure, what were you looking for?<br>THEM: immediately offer a cheaper price</div>
+            </div>
+            <div class="flow-row">
+                <div class="arrow-container small">
+                    <div class="arrow down"></div>
+                </div>
+                <div class="arrow-container large">
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+            <div class="flow-row">
+                <div class="response-box small">-</div>
+                <div class="response-box large">Great! They're open to haggling, proceed from here.</div>
+            </div>
         </div>
     </main>
+    
+    
     <!-- Back Arrow Link -->
     <div class="back-arrow">
         <a href="{{ url_for('strategies') }}">

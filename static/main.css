@@ -312,3 +312,63 @@ button {
     height: 24px;
     margin-right: 8px; /* Space between the icon and text */
 }
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flow-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.decision-box, .response-box {
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.decision-box.negative {
+    background-color: #ffcccc;
+}
+
+.decision-box.positive {
+    background-color: #ccffcc;
+}
+
+.response-box.large {
+    flex-grow: 2;
+}
+
+.response-box.small {
+    flex-grow: 1;
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url('path_to_your_arrow_image'); /* Add your arrow images here */
+    background-size: cover;
+}
+
+.arrow.right {
+    transform: rotate(0deg); /* Adjust rotation as necessary */
+}
+
+.arrow.down {
+    transform: rotate(90deg);
+}
+
