@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+.main .content,
 body {
     margin: 0;
     padding: 0;
@@ -383,4 +383,41 @@ button {
     background-color: #007BFF; /* Bootstrap blue for example */
     color: white; /* White text for better contrast */
     border-color: #0056b3; /* Darker blue for the border */
+}
+.main .content {
+    text-align: center; /* Ensures text and smaller elements are centered within their blocks */
+}
+.strategy-info {
+    text-align: justify; /* Justifies the text for better readability */
+    margin: 20px; /* Provides some space around the text */
+}
+
+.breakdown {
+    background: #f0f0f0; /* Light grey background */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px;
+    width: auto; /* Adjust width as necessary */
+}
+
+.breakdown h2 {
+    text-align: center; /* Centering the heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.breakdown ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    text-align: center; /* Center-aligns the list items */
+    font-size: 1.2rem; /* Larger font for visibility */
+}
+
+.breakdown ul li {
+    margin: 5px 0; /* Spacing between list items */
+}
+.content img {
+    display: block;       /* Makes the img a block element which can be centered with margin */
+    margin: 0 auto;       /* Automatically sets equal left and right margins, centering the image */
+    max-width: 100%;      /* Ensures the image is responsive and doesn't overflow its container */
+    height: auto;         /* Maintains aspect ratio */
 }

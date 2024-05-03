@@ -34,9 +34,18 @@
     </div>
     <main class="content">
         <h1 class="strategy-title">Imperfection Strategy</h1>
-        <p>This strategy focuses on finding flaws or imperfections in items to negotiate a lower price. Pointing out imperfections can make the seller more willing to lower the price.</p>
-        <p>Scroll down for tips on how to spot and leverage imperfections during negotiations.</p>
+        <p>Choose an item type to see specific negotiating tips:</p>
+        <button id="new-item">New Item</button>
+        <button id="used-item">Used Item</button>
+
+        <div id="new-item-info" class="info response-box large hidden">
+            <p>You never want to seem impressed with anything about the item in question or any offer they make. As soon as they see you're impressed, they'll start shoving that aspect down your throat and honestly, it's more annoying and distracting than anything else. But that's mostly the point. They want you to buy fast and be out the door.</p>
+        </div>
+        <div id="used-item-info" class="info response-box large hidden">
+            <p>If the item is pre-owned, you're in a better position. It might seem sleazy but try and look for ANY imperfection. Even the slightest thing can drastically reduce the worth of an item. Point it out and make it seem way worse than it is. Sellers are people too, they understand that imperfections would probably warrant cheaper prices.</p>
+        </div>
     </main>
+    <script src="static/app.js"></script>
     <div class="back-arrow">
         <a href="{{ url_for('strategies') }}">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

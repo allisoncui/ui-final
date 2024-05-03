@@ -72,3 +72,19 @@ document.addEventListener('DOMContentLoaded', function () {
         finalResponse.classList.add('hidden');
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const newItemBtn = document.getElementById('new-item');
+    const usedItemBtn = document.getElementById('used-item');
+    const newItemInfo = document.getElementById('new-item-info');
+    const usedItemInfo = document.getElementById('used-item-info');
+
+    newItemBtn.addEventListener('click', function() {
+        newItemInfo.classList.remove('hidden');
+        usedItemInfo.classList.add('hidden');
+    });
+
+    usedItemBtn.addEventListener('click', function() {
+        usedItemInfo.classList.remove('hidden');
+        newItemInfo.classList.add('hidden');
+    });
+});
