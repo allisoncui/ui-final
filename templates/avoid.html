@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Avoid Strategy - Haggling 101</title>
+</head>
+<body>
+    <div class="navbar-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/intro" class="nav-link">Intro
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/strategies" class="nav-link activetext">Strategies
+                    <div class="progress-indicator active"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+        </ul>
+        <div class="line"></div>
+    </div>
+    <main class="content">
+        <div class="strategy-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlu_qUrv1vz_GNd0NZio7EqIMF6LuUBR2x6BApVvxiBw&s" alt="Warning Sign" class="warning-sign">
+            <div class="strategy-info">
+                <h1 class="strategy-title">DO NOT DO!</h1>
+                <p class="subtitle">BE CAREFUL OF WHAT YOU SAY OR SUGGEST.</p>
+                <p class="description">Any of the previous strategies will not be effective if you do any of the following:</p>
+                <ul class="avoid-list">
+                    <li>Reverse auctioning. If they offer $500, just coming back with saying "$300!" won't get you anywhere.</li>
+                    <li>Do not have O reason. You need to be able to back up your offer at least a little bit. Bring up other places offering similar items for a price close to yours.</li>
+                    <li>You still want to be friendly and approachable. You're asking the business to do you a favor. Make them WANT to cut you a deal by being friendly and open to negotiation.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <div class="back-arrow">
+        <a href="{{ url_for('strategies') }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Strategies
+        </a>
+    </div>
+    

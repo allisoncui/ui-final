@@ -22,11 +22,15 @@ def strategies():
 @app.route('/imperfection')
 def imperfection_strategy():
     return render_template('imperfection.html')
-
 @app.route('/king_cash')
 def king_cash():
     return render_template('king_cash.html')
-
+@app.route('/genuinity')
+def genuinity():
+    return render_template('genuinity.html')
+@app.route('/avoid')
+def avoid():
+    return render_template('avoid.html')
 @app.route('/quiz')
 def quiz():
     # Render quiz page with question data
