@@ -28,6 +28,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add similar handlers for other strategies if needed
 });
-document.querySelector('.next-arrow').addEventListener('click', function () {
-    window.location.href = '/quiz'; // Assuming this is the next tutorial step
+document.addEventListener('DOMContentLoaded', function () {
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+    const managerBtn = document.getElementById('manager');
+    const lookingForBtn = document.getElementById('looking-for');
+    const cheaperPriceBtn = document.getElementById('cheaper-price');
+    const managerResponse = document.getElementById('manager-response');
+    const cheaperPriceResponse = document.getElementById('cheaper-price-response');
+    const finalResponse = document.getElementById('final-response');
+
+    noBtn.addEventListener('click', function() {
+        document.getElementById('negative-response').classList.remove('hidden');
+        document.getElementById('positive-responses').classList.add('hidden');
+        managerResponse.classList.add('hidden');
+        cheaperPriceResponse.classList.add('hidden');
+        finalResponse.classList.add('hidden');
+    });
+
+    yesBtn.addEventListener('click', function() {
+        document.getElementById('positive-responses').classList.remove('hidden');
+        document.getElementById('negative-response').classList.add('hidden');
+        managerResponse.classList.add('hidden');
+        cheaperPriceResponse.classList.add('hidden');
+        finalResponse.classList.add('hidden');
+    });
+
+    managerBtn.addEventListener('click', function() {
+        managerResponse.classList.remove('hidden');
+        cheaperPriceResponse.classList.add('hidden');
+        finalResponse.classList.add('hidden');
+    });
+
+    lookingForBtn.addEventListener('click', function() {
+        finalResponse.classList.remove('hidden');
+        managerResponse.classList.add('hidden');
+        cheaperPriceResponse.classList.add('hidden');
+    });
+
+    cheaperPriceBtn.addEventListener('click', function() {
+        cheaperPriceResponse.classList.remove('hidden');
+        managerResponse.classList.add('hidden');
+        finalResponse.classList.add('hidden');
+    });
 });
