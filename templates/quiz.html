@@ -1,70 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>Quiz - Haggling 101</title>
 </head>
-
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="/" class="nav-link">Home
-                    <div class="progress-indicator"></div>
-                </a>
+                <a href="/" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="/intro" class="nav-link">Intro
-                    <div class="progress-indicator"></div>
-                </a>
+                <a href="/intro" class="nav-link">Intro</a>
             </li>
             <li class="nav-item">
-                <a href="/strategies" class="nav-link">Strategies
-                    <div class="progress-indicator"></div>
-                </a>
+                <a href="/strategies" class="nav-link">Strategies</a>
             </li>
             <li class="nav-item">
-                <a href="/quiz" class="nav-link activetext">Quiz
-                    <div class="progress-indicator active"></div>
-                </a>
+                <a href="/quiz" class="nav-link activetext">Quiz</a>
             </li>
         </ul>
-        <div class="line"></div>
     </div>
     <main class="content">
         <h1>{{ question_data.question }}</h1>
-        <form id="quiz-form" method="POST" action="/quiz/result">
+        <form method="POST" action="{{ url_for('submit_answer', index=index) }}">
             {% for choice in question_data.choices %}
             <div>
-                <input type="radio" name="choice" value="{{ choice }}" id="choice-{{ loop.index }}" required>
+                <input type="radio" name="choice" value="{{ choice }}" id="choice-{{ loop.index }}"
+					required {{ 'checked' if session['answers'].get(index|str) == choice else '' }}>
+
                 <label for="choice-{{ loop.index }}">{{ choice }}</label>
             </div>
             {% endfor %}
-            <input type="hidden" name="correct_answer" value="{{ question_data.correct_answer }}">
-            <button type="submit">Submit</button>
+            {% if index < total_questions - 1 %}
+            <button type="submit" name="next">Save and Next</button>
+            {% else %}
+            <button type="submit" name="submit_final">Submit Quiz</button>
+            {% endif %}
         </form>
     </main>
-
-    <div class="arrow-container">
-        <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-    </div>
-
-    <script>
-        document.querySelector('.next-arrow').addEventListener('click', function () {
-            window.location.href = '/quiz';
-        });
-    </script>
-    <script>
-        document.getElementById('quiz-form').onsubmit = function () {
-            return true;
-        };
-    </script>
 </body>
-
 </html>
