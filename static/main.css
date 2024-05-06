@@ -421,3 +421,48 @@ button {
     max-width: 100%;      /* Ensures the image is responsive and doesn't overflow its container */
     height: auto;         /* Maintains aspect ratio */
 }
+
+.quiz-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiz-title {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-option {
+    margin: 10px 0;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz-button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.quiz-button:hover {
+    background-color: #4cae4c;
+}
