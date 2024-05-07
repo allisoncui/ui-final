@@ -39,29 +39,41 @@
         <p class="caption">Click on each of the following to learn about haggling strategies and approaches.</p>
         <div class="strategies-container">
             <a href="{{ url_for('opening_strategy') }}" class="strategy">
-                <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy">
-                <h2>OPENING</h2>
+                <div class="strat-img-container">
+                    <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy">
+                </div>
+                <div class="strat-heading">Opening</div>
             </a>
             <a href="{{ url_for('imperfection_strategy') }}" class="strategy">
-                <img src="https://blog.timesunion.com/kristi/files/2009/03/haggling2.jpg" alt="Imperfection Strategy">
-                <h2>IMPERFECTION</h2>
+                <div class="strat-img-container">
+                    <img src="https://proteccollision.com/wp-content/uploads/2021/09/closeup-dented-car-side-body-of-car-was-damaged-by-accident-in-traffic_t20_nRBrW6-1024x682.jpg"
+                        alt="Imperfection Strategy">
+                </div>
+                <div class="strat-heading">Imperfection</div>
             </a>
             <a href="{{ url_for('king_cash') }}" class="strategy">
-                <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg" alt="King Cash Strategy">
-                <h2>KING CASH</h2>
+                <div class="strat-img-container">
+                    <img src="https://www.patriotsoftware.com/wp-content/uploads/2016/10/is-it-legal-to-pay-employees-in-cash.jpg"
+                        alt="King Cash Strategy">
+                </div>
+                <div class="strat-heading">King Cash</div>
             </a>
-        </div>
-        <div class="strategies-container">
             <a href="{{ url_for('genuinity') }}" class="strategy">
-                <img src="https://t3.ftcdn.net/jpg/05/57/68/88/360_F_557688816_G3vYJ9TcCkqch3t6MFfAyRsQsZ2YQxin.jpg" alt="Genuinity Strategy">
-                <h2>GENUINITY</h2>
+                <div class="strat-img-container">
+                    <img src="https://t3.ftcdn.net/jpg/02/03/00/78/360_F_203007826_E32mbalY8OaeG43bpiKNj4nZvmkuIDZN.jpg"
+                        alt="Genuinity Strategy">
+                </div>
+                <div class="strat-heading">Genuinity</div>
             </a>
             <a href="{{ url_for('avoid') }}" class="strategy">
-                <img src="https://cdn11.bigcommerce.com/s-8pqeoh0sdo/images/stencil/1280x1280/products/259/572/FS-YLDCAUT-2__01128.1467078077.jpg?c=2" alt="Avoid Strategy">
-                <h2>AVOID</h2>
+                <div class="strat-img-container">
+                    <img src="https://d2hl08zg7q4l7p.cloudfront.net/wp-content/uploads/2022/06/03140231/DT_Ave-G-Stop-signs.jpg"
+                        alt="Avoid Strategy">
+                </div>
+                <div class="strat-heading">Avoid</div>
             </a>
         </div>
-        </div>
+
         <div class="arrow-container">
             <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -69,7 +81,11 @@
             </svg>
         </div>
     </main>
-    <script src="static/app.js"></script>
+    <script>
+        document.querySelector('.next-arrow').addEventListener('click', function () {
+            window.location.href = '/quiz';
+        });
+    </script>
 </body>
 
 </html>

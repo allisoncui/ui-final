@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .main .content,
 body {
     margin: 0;
@@ -188,6 +189,7 @@ body {
 
 .caption {
     font-family: 'Poppins';
+    text-align: center;
 }
 
 .content {
@@ -229,32 +231,50 @@ body {
 }
 
 .strategies-container {
-    display: flex;
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Align items vertically */
-    gap: 20px; /* Adds space between each strategy */
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: 250px 250px;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .strategy {
-    flex: 1; /* Each strategy takes equal width */
-    text-align: center; /* Centers the text and image within the strategy div */
-    padding: 20px; /* Padding around each strategy for spacing */
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Optional: Adds subtle shadow for depth */
-    border-radius: 8px; /* Optional: Rounds the corners of the strategy blocks */
+    background-color: rgb(243, 243, 243);
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins';
 }
 
-.strategy img {
-    width: 100%; /* Makes the image responsive within the container */
-    max-width: 250px; /* Maximum width of the image */
-    height: auto; /* Keeps the image aspect ratio */
-    margin-bottom: 10px; /* Space between the image and the text */
+.strat-img-container {
+    width: 100%;
+    text-align: center;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
 }
 
-.strategy h2 {
-    margin-top: 0;
-    font-size: 1.25em; /* Adjust the size of the title under the image */
+.strat-heading {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1.3px;
 }
-
 
 button {
     border: 1px solid black;
@@ -264,23 +284,52 @@ button {
     cursor: pointer;
 }
 
+.strat-heading-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.strat-page-heading {
+    flex: 1;
+    padding-left: 20px;
+    margin-left: 40px;
+}
+
+.strat-page-img {
+    display: inline-block;
+    width: 370px;
+    margin-left: 100px;
+}
+
+.rounded-img {
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
 .strategy-title {
-    font-size: 2em;
-    text-align: center;
-    color: #2a2a2a; /* Dark text for better readability */
+    font-size: 2.25rem;
+    text-align: left;
+    color: #2a2a2a;
+    font-family: 'SpaceMono', monospace;
 }
 
 .strategy-description {
     font-size: 1.5em;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: #4a4a4a;
+    font-family: 'SpaceMono', monospace;
 }
 
 .body-text {
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 50rem;
+    font-family: 'Poppins';
+    font-size: 1em;
 }
 
 .flowchart {
@@ -290,64 +339,103 @@ button {
     margin-top: 50px;
 }
 
-.decision-box, .response-box {
-    padding: 20px;
-    border: 2px solid #000;
-    text-align: center;
+.flowchart-heading {
+    font-family: 'SpaceMono', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin-top: 30px;
 }
 
-.decision-box {
-    width: 20%;
-    background-color: #ccffcc; /* Light green for decision points */
+.decision-box,
+.response-box {
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
 }
 
 .response-box {
     width: 40%;
-    background-color: #ccccff; /* Light blue for responses */
+    background-color: #ccccff;
+    cursor: pointer;
 }
+
+.response-box.active {
+    background-color: #aaaacc;
+}
+
 .back-arrow a {
     display: flex;
     align-items: center;
-    color: #333; /* Adjust the color as needed */
-    text-decoration: none; /* Remove underline */
+    color: #333;
+    text-decoration: none;
     font-weight: bold;
-    margin-bottom: 20px; /* Space from the content */
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    margin-left: 30px;
 }
 
 .back-arrow svg {
-    width: 24px; /* Adjust size as needed */
+    width: 24px;
     height: 24px;
-    margin-right: 8px; /* Space between the icon and text */
+    margin-right: 8px;
 }
+
 .flowchart {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
+
 .flow-row {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.decision-box, .response-box {
-    padding: 15px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+.decision-box,
+.response-box {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
     margin: 10px;
+    cursor: pointer;
+}
+
+.response-box-first {
+    width: 40%;
+    background-color: #ccccff;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .decision-box.negative {
-    background-color: #f8d7da; /* Light red for negative decisions */
+    background-color: #f8d7da;
+    cursor: pointer;
 }
 
 .decision-box.positive {
-    background-color: #d4edda; /* Light green for positive decisions */
+    background-color: #d4edda;
+    cursor: pointer;
+}
+
+.decision-box.positive.active {
+    background-color: #99cc99;
+}
+
+.decision-box.negative.active {
+    background-color: #cc9093;
 }
 
 .response-box.small {
     width: 30%;
+    background-color: #007BFF;
+    color: white;
+    border-color: #0056b3;
+    cursor: text;
 }
 
 .response-box.large {
@@ -359,67 +447,78 @@ button {
     justify-content: center;
     align-items: center;
 }
-.arrow.right, .arrow.down {
+
+.arrow.right,
+.arrow.down {
     display: block;
-    width: 40px;  /* Set the width of the arrow */
-    height: 40px; /* Set the height of the arrow */
-    background-image: url('path_to_your_arrow_image.png'); /* Set the background image to an arrow */
-    background-size: cover; /* Ensure the image covers the whole area of the div */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    background-position: center; /* Center the background image within the div */
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .arrow.right {
-    transform: rotate(0deg); /* No rotation for right arrow, adjust if necessary */
+    transform: rotate(0deg);
 }
 
 .arrow.down {
-    transform: rotate(90deg); /* Rotate the arrow to point downwards */
+    transform: rotate(90deg);
 }
+
 .hidden {
     display: none;
 }
+
 .blue-box {
-    background-color: #007BFF; /* Bootstrap blue for example */
-    color: white; /* White text for better contrast */
-    border-color: #0056b3; /* Darker blue for the border */
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #000;
+    cursor: text;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    width: 400px;
 }
+
 .main .content {
-    text-align: center; /* Ensures text and smaller elements are centered within their blocks */
+    text-align: center;
 }
+
 .strategy-info {
-    text-align: justify; /* Justifies the text for better readability */
-    margin: 20px; /* Provides some space around the text */
+    text-align: justify;
+    margin: 20px;
 }
 
 .breakdown {
-    background: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Padding around the content */
-    border-radius: 10px; /* Rounded corners */
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
     margin: 20px;
-    width: auto; /* Adjust width as necessary */
+    width: auto;
 }
 
 .breakdown h2 {
-    text-align: center; /* Centering the heading */
-    margin-bottom: 10px; /* Space below the heading */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .breakdown ul {
-    list-style: none; /* Removes bullet points */
+    list-style: none;
     padding: 0;
-    text-align: center; /* Center-aligns the list items */
-    font-size: 1.2rem; /* Larger font for visibility */
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .breakdown ul li {
-    margin: 5px 0; /* Spacing between list items */
+    margin: 5px 0;
 }
+
 .content img {
-    display: block;       /* Makes the img a block element which can be centered with margin */
-    margin: 0 auto;       /* Automatically sets equal left and right margins, centering the image */
-    max-width: 100%;      /* Ensures the image is responsive and doesn't overflow its container */
-    height: auto;         /* Maintains aspect ratio */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .quiz-container {
@@ -429,7 +528,7 @@ button {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .quiz-title {

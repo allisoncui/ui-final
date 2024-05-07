@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>Opening Strategy - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
@@ -33,11 +35,25 @@
         <div class="line"></div>
     </div>
     <main class="content">
-        <h1 class="strategy-title">OPENING</h1>
-        <p class="strategy-description">THE BEST OPENING METHODS ARE THE SIMPLEST.</p>
-        <p class="body-text">Just ask "This is a bit more than I’m willing to pay, would you be willing to come down on the price?" Here are the most common responses. </p>
+        <div class="strat-heading-container">
+            <div class="strat-page-img">
+                <img src="https://images.wsj.net/im-789267/?width=1278&size=1" alt="Opening Strategy"
+                    class="rounded-img">
+            </div>
+            <div class="strat-page-heading">
+                <h1 class="strategy-title">OPENING</h1>
+                <p class="strategy-description">THE BEST OPENING METHODS ARE THE SIMPLEST.</p>
+                <p class="body-text">Just ask "This is a bit more than I’m willing to pay, would you be willing to come
+                    down on the price?" This non-confrontational strategy facilitates open communication, creating a
+                    conducive environment for friendly negotiation.</p>
+                <p class="body-text">Click through the most common responses in the flow chart below.</p>
+            </div>
+        </div>
         <div class="flowchart">
-            <div class="response-box" id="response">They say...</div>
+            <div class="flowchart-heading">
+                FLOW CHART
+            </div>
+            <div class="response-box-first" id="response">They say...</div>
             <div class="flow-row">
                 <div class="arrow-container hidden" id="arrow-right-1">
                     <div class="arrow right"></div>
@@ -47,11 +63,12 @@
                 </div>
             </div>
             <div class="flow-row">
-                <div class="decision-box negative" id="no">No</div>
                 <div class="decision-box positive" id="yes">Yes</div>
+                <div class="decision-box negative" id="no">No</div>
             </div>
             <div class="flow-row responses hidden" id="negative-response">
-                <div class="response-box small">You’re out of luck! But at least you tried. It’s as simple as asking.</div>
+                <div class="response-box small">You’re out of luck! But at least you tried. It’s as simple as asking.
+                </div>
             </div>
             <div class="flow-row top hidden" id="positive-responses">
                 <div class="response-box" id="manager">THEM: Let me ask my manager</div>
@@ -59,19 +76,25 @@
                 <div class="response-box" id="cheaper-price">THEM: They immediately offer a cheaper price</div>
             </div>
             <div class="flow-row hidden" id="manager-response">
-                <div class="response-box large blue-box">They might come back with an offer. You almost always want to ignore that. If you didn't first make an offer, know that they are almost never talking to the manager on any offer you did not make yourself. You should propose your own offer now. </div>
+                <div class="large blue-box">They might come back with an offer. You almost always want to
+                    ignore that. If you didn't first make an offer, know that they are almost never talking to the
+                    manager on any offer you did not make yourself. You should propose your own offer now. </div>
             </div>
             <div class="flow-row hidden" id="cheaper-price-response">
-                <div class="response-box large blue-box">They might even just open with a "You know what, we have a special going on now...". (Note: They will ALWAYS be running a special.) You almost always want to ignore that. You should propose your own offer now. </div>
+                <div class="large blue-box">They might even just open with a "You know what, we have a
+                    special going on now...". (Note: They will ALWAYS be running a special.) You almost always want to
+                    ignore that. You should propose your own offer now. </div>
             </div>
             <div class="flow-row hidden" id="final-response">
-                <div class="response-box large blue-box">Great! They’re open to haggling, proceed from here and make an offer.</div>
+                <div class="large blue-box">Great! They’re open to haggling, proceed from here and make an
+                    offer.</div>
             </div>
         </div>
     </main>
     <div class="back-arrow">
         <a href="{{ url_for('strategies') }}">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Strategies
@@ -79,4 +102,5 @@
     </div>
     <script src="static/app.js"></script>
 </body>
+
 </html>

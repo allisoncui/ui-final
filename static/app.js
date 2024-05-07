@@ -88,3 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
         newItemInfo.classList.add('hidden');
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var decisionBoxes = document.querySelectorAll('.decision-box');
+    decisionBoxes.forEach(function(box) {
+        box.addEventListener('click', function() {
+            decisionBoxes.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    var responseBoxes = document.querySelectorAll('.response-box');
+    responseBoxes.forEach(function(box) {
+        box.addEventListener('click', function() {
+            responseBoxes.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
