@@ -112,8 +112,9 @@ def avoid():
 
 @app.route('/quiz')
 def quiz():
-    session.setdefault('current_question', 0)  # Ensure 'current_question' is initialized
-    index = session.get('current_question', 0)
+    session.setdefault('answers', []) 
+    session.setdefault('current_question', 0)  # Also initialize 'current_question'
+    index = session['current_question']
     if index >= len(quiz_questions):
         return redirect(url_for('quiz_result'))
     return render_template('quiz.html', question_data=quiz_questions[index], index=index)
@@ -121,24 +122,20 @@ def quiz():
 @app.route('/submit_answer', methods=['POST'])
 def submit_answer():
     index = session.get('current_question', 0)
-    if 'answers' not in session:
-        session['answers'] = []  # Ensure 'answers' is initialized as a list
-
-    # Save the answer to session
-    session['answers'].append(request.form.get('choice'))  # Append to the list
+    session['answers'].append(request.form.get('choice'))
     session['current_question'] = index + 1  # Increment the question index
 
     if index + 1 >= len(quiz_questions):
         return redirect(url_for('quiz_result'))
     else:
         return redirect(url_for('quiz'))
-
 @app.route('/quiz_result')
 def quiz_result():
-    answers = session.pop('answers', [])
-    score = sum(1 for i, answer in enumerate(answers) if answer == quiz_questions[i]['correct_answer'])
-    session.pop('current_question', None)  # Reset quiz session data
+    score = sum(1 for i, answer in enumerate(session['answers']) if answer == quiz_questions[i]['correct_answer'])
+    session.pop('answers', None)  # Clear answers after calculating the score
+    session.pop('current_question', None)  # Reset the question index
     return render_template('final_result.html', score=score, total_questions=len(quiz_questions))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
