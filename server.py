@@ -2,11 +2,11 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify, redirect, url_for
 from flask import session
-
+import sys
 import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
-
+app.config['DEBUG']=True
 
 def str_filter(value):
     return str(value)
@@ -113,6 +113,8 @@ def avoid():
 @app.route('/quiz')
 def quiz():
     session.setdefault('answers', []) 
+    if 'answers' not in session or session['answers']=={}:
+        session['answers'] = []
     session.setdefault('current_question', 0)  # Also initialize 'current_question'
     index = session['current_question']
     if index >= len(quiz_questions):
@@ -121,7 +123,11 @@ def quiz():
 
 @app.route('/submit_answer', methods=['POST'])
 def submit_answer():
+    print('type of session' + str(type(session['answers'])))
+    print(session['answers'])
     index = session.get('current_question', 0)
+    if 'answers' not in session or session['answers']=={}:
+        session['answers'] = []
     session['answers'].append(request.form.get('choice'))
     session['current_question'] = index + 1  # Increment the question index
 
@@ -133,6 +139,7 @@ def submit_answer():
 def quiz_result():
     score = sum(1 for i, answer in enumerate(session['answers']) if answer == quiz_questions[i]['correct_answer'])
     session.pop('answers', None)  # Clear answers after calculating the score
+    session['answers']=[]
     session.pop('current_question', None)  # Reset the question index
     return render_template('final_result.html', score=score, total_questions=len(quiz_questions))
 
