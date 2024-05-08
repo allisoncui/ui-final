@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>King Cash Strategy - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
@@ -33,26 +35,45 @@
         <div class="line"></div>
     </div>
     <main class="content">
-        <h1 class="strategy-title">King Cash Strategy</h1>
-        <img src ="https://s.yimg.com/ny/api/res/1.2/.S3TrKqaiT2VtkqU4bOZEQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/gobankingrates_644/f50c34755da41912a9f074896aeab0f9">  
-        <p class="strategy-info">Offer cash. Businesses LOVE cash. Charging costs them money, so by offering cash, literally everyone (except Visa or whatever) wins. If you're going for a deep offer, offer it in cash. It makes it so much more appealing to the business. Also offer to pay in full, if you can. </p>
-        <div class="breakdown">
-            <h2>BREAKDOWN OF “SUCCESSFUL HAGGLES”</h2>
-            <ul>
-                <li>40% Car</li>
-                <li>26% Bank Fees</li>
-                <li>15% Rent</li>
-                <li>5% Mortgage</li>
-            </ul>
+        <div class="strat-heading-container">
+            <div class="strat-page-img">
+                <img src="https://s.yimg.com/ny/api/res/1.2/.S3TrKqaiT2VtkqU4bOZEQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/gobankingrates_644/f50c34755da41912a9f074896aeab0f9"
+                    alt="King Cash Strategy" class="rounded-img">
+            </div>
+            <div class="strat-page-heading">
+                <h1 class="strategy-title">KING CASH</h1>
+                <p class="body-text">Offer cash! <strong>Businesses LOVE cash.</strong> Paying by card costs them money, so by offering
+                    cash, literally everyone (except Visa or whatever) wins. </p>
+                <p class="body-text">When you're ready to make a significant offer, especially for large purchases or
+                    services, proposing a cash payment can be particularly persuasive. If it's feasible, <strong>consider paying
+                        the entire amount in cash</strong>. This not only simplifies the transaction but also demonstrates your
+                    commitment and financial readiness, which can be appealing to sellers and may help in securing a
+                    favorable deal.</p>
+            </div>
         </div>
+
+        <div class="breakdown-container">
+            <div class="breakdown">
+                <h3>BREAKDOWN OF “SUCCESSFUL HAGGLES”</h3>
+                <ul>
+                    <li>40% Car</li>
+                    <li>26% Bank Fees</li>
+                    <li>15% Rent</li>
+                    <li>5% Mortgage</li>
+                </ul>
+            </div>
+        </div>
+
     </main>
     <div class="back-arrow">
         <a href="{{ url_for('strategies') }}">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Strategies
         </a>
     </div>
 </body>
+
 </html>
