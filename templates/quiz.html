@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>Quiz - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
-            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/intro" class="nav-link">Intro</a></li>
-            <li class="nav-item"><a href="/strategies" class="nav-link">Strategies</a></li>
-            <li class="nav-item"><a href="/quiz" class="nav-link activetext">Quiz</a></li>
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/intro" class="nav-link">Intro
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/strategies" class="nav-link activetext">Strategies
+                    <div class="progress-indicator"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/quiz" class="nav-link">Quiz
+                    <div class="progress-indicator active"></div>
+                </a>
+            </li>
         </ul>
+        <div class="line"></div>
     </div>
     <div class="quiz-container">
         <h1 class="quiz-title">{{ question_data.question }}</h1>
-        <form method="POST" action="{{ url_for('submit_answer', index=index) }}" class="quiz-form">
+        <form method="POST" action="{{ url_for('submit_answer') }}" class="quiz-form">
             {% for choice in question_data.choices %}
             <label class="quiz-option">
                 <input type="radio" name="choice" value="{{ choice }}" required>
                 {{ choice }}
             </label>
             {% endfor %}
-            <button type="submit" class="quiz-button">{{ 'Submit Quiz' if index == total_questions - 1 else 'Save and Next' }}</button>
+            <button type="submit" class="quiz-button">Next</button>
         </form>
     </div>
+
 </body>
 </html>
