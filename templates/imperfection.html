@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
     <title>Imperfection Strategy - Haggling 101</title>
 </head>
+
 <body>
     <div class="navbar-container">
         <ul class="nav-list">
@@ -33,26 +35,47 @@
         <div class="line"></div>
     </div>
     <main class="content">
-        <h1 class="strategy-title">Imperfection Strategy</h1>
-        <p>Choose an item type to see specific negotiating tips:</p>
-        <button id="new-item">New Item</button>
-        <button id="used-item">Used Item</button>
-
-        <div id="new-item-info" class="info response-box large hidden">
-            <p>You never want to seem impressed with anything about the item in question or any offer they make. As soon as they see you're impressed, they'll start shoving that aspect down your throat and honestly, it's more annoying and distracting than anything else. But that's mostly the point. They want you to buy fast and be out the door.</p>
+        <div class="strat-heading-container">
+            <div class="strat-page-img">
+                <img src="https://proteccollision.com/wp-content/uploads/2021/09/closeup-dented-car-side-body-of-car-was-damaged-by-accident-in-traffic_t20_nRBrW6-1024x682.jpg"
+                    alt="Imperfection Strategy" class="rounded-img">
+            </div>
+            <div class="strat-page-heading">
+                <h1 class="strategy-title">IMPERFECTION</h1>
+                <p class="strategy-description">DO YOU NOTICE ANYTHING WRONG WITH THIS IMAGE?</p>
+                <p class="body-text">Choose an item type below to see specific negotiating tips.</p>
+            </div>
         </div>
-        <div id="used-item-info" class="info response-box large hidden">
-            <p>If the item is pre-owned, you're in a better position. It might seem sleazy but try and look for ANY imperfection. Even the slightest thing can drastically reduce the worth of an item. Point it out and make it seem way worse than it is. Sellers are people too, they understand that imperfections would probably warrant cheaper prices.</p>
+        <div class="imperf-content">
+            <button id="new-item" class="item-button">New Item</button>
+            <button id="used-item" class="item-button">Used Item</button>
+            
+            <div class="info-boxes">
+                <div id="new-item-info" class="info response-box-first large hidden">
+                    <p>You never want to seem impressed with anything about the item in question or any offer they make. As soon
+                        as they see you're impressed, they'll start shoving that aspect down your throat and honestly, it's more
+                        annoying and distracting than anything else. But that's mostly the point. They want you to buy fast and
+                        be out the door.</p>
+                </div>
+                <div id="used-item-info" class="info response-box-first large hidden">
+                    <p>If the item is pre-owned, you're in a better position. It might seem sleazy but try and look for ANY
+                        imperfection. Even the slightest thing can drastically reduce the worth of an item. Point it out and
+                        make it seem way worse than it is. Sellers are people too, they understand that imperfections would
+                        probably warrant cheaper prices.</p>
+                </div>
+            </div>
         </div>
     </main>
     <script src="static/app.js"></script>
     <div class="back-arrow">
         <a href="{{ url_for('strategies') }}">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Strategies
         </a>
     </div>
 </body>
+
 </html>

@@ -104,4 +104,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+
+    var infoBoxes = document.querySelectorAll('.item-button');
+    infoBoxes.forEach(function(box) {
+        box.addEventListener('click', function() {
+            infoBoxes.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 });

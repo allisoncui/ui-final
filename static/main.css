@@ -278,10 +278,16 @@ body {
 
 button {
     border: 1px solid black;
-    border-radius: 50px;
+    border-radius: 30px;
     padding: 20px;
-    margin-top: 10px;
+    margin: 10px;
+    font-family: 'Poppins';
     cursor: pointer;
+    font-size: larger;
+}
+
+button.active {
+    background-color: lightgray;
 }
 
 .strat-heading-container {
@@ -410,6 +416,7 @@ button {
     border: 1px solid #000;
     border-radius: 20px;
     text-align: center;
+    font-family: 'Poppins';
 }
 
 .decision-box.negative {
@@ -486,8 +493,9 @@ button {
 }
 
 .strategy-info {
-    text-align: justify;
+    text-align: center;
     margin: 20px;
+    font-family: 'Poppins';
 }
 
 .breakdown {
@@ -519,6 +527,19 @@ button {
     margin: 0 auto;
     max-width: 100%;
     height: auto;
+}
+
+.imperf-content {
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .quiz-container {
