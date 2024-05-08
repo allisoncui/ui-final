@@ -112,67 +112,32 @@ def avoid():
 
 @app.route('/quiz')
 def quiz():
-    session.setdefault('answers', {})
-    index = request.args.get('index', default=0, type=int)
-    index_str = str(index)  # Convert index to string for session key usage
-
-    if 'answers' not in session:
-        session['answers'] = {}
-
+    index = session.get('current_question', 0)
     if index >= len(quiz_questions):
         return redirect(url_for('quiz_result'))
+    return render_template('quiz.html', question_data=quiz_questions[index], index=index)
 
-    question_data = quiz_questions[index]
-    total_questions = len(quiz_questions)
-    return render_template('quiz.html', question_data=question_data, index=index, index_str=index_str, total_questions=total_questions)
-
-
-@app.route('/submit_answer/<int:index>', methods=['POST'])
-def submit_answer(index):
-    choice = request.form['choice']
+@app.route('/submit_answer', methods=['POST'])
+def submit_answer():
+    index = session.get('current_question', 0)
     if 'answers' not in session:
-        session['answers'] = {}
-    session['answers'][str(index)] = choice
+        session['answers'] = []
 
-    # If not the last question, redirect to the next question
-    if index + 1 < len(quiz_questions):
-        return redirect(url_for('quiz', index=index + 1))
+    # Save the answer to session
+    session['answers'].append(request.form.get('choice'))
+    session['current_question'] = index + 1
 
-    # If it's the last question, calculate score and show results
-    score = calculate_score(session['answers'])
-    session.pop('answers', None)  # Clear the session answers
-    return render_template('final_result.html', score=score, total_questions=len(quiz_questions))
-
-
-def calculate_score(answers):
-    score = 0
-    for i, question in enumerate(quiz_questions):
-        if str(i) in answers and answers[str(i)] == question['correct_answer']:
-            score += 1
-    return score
-
-
-@app.route('/quiz/result', methods=['POST'])
-def quiz_result():
-    index = request.args.get('index', type=int, default=0)
-    selected_choice = request.form['choice']
-    correct_answer = request.form['correct_answer']
-
-    # Initialize score in session if it doesn't exist
-    if 'score' not in session:
-        session['score'] = 0
-
-    # Update score based on the current answer
-    if selected_choice == correct_answer:
-        session['score'] += 1
-
-    # Move to the next question or finish quiz
     if index + 1 >= len(quiz_questions):
-        # Get total score and reset the session
-        total_score = session.pop('score', 0)
-        return render_template('final_result.html', score=total_score, total_questions=len(quiz_questions))
+        return redirect(url_for('quiz_result'))
     else:
-        return redirect(url_for('quiz', index=index + 1))
+        return redirect(url_for('quiz'))
+
+@app.route('/quiz_result')
+def quiz_result():
+    answers = session.pop('answers', [])
+    score = sum(1 for i, answer in enumerate(answers) if answer == quiz_questions[i]['correct_answer'])
+    session.pop('current_question', None)
+    return render_template('final_result.html', score=score, total_questions=len(quiz_questions))
 
 
 if __name__ == '__main__':
