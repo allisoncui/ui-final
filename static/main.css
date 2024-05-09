@@ -241,7 +241,7 @@ body {
 
 .strategy {
     background-color: rgb(243, 243, 243);
-    border: 1px solid black;
+    border: 0.5px solid black;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -277,7 +277,7 @@ body {
 }
 
 button {
-    border: 1px solid black;
+    border: 0.5px solid black;
     border-radius: 30px;
     padding: 20px;
     margin: 10px;
@@ -286,7 +286,7 @@ button {
     font-size: larger;
 }
 
-button.active {
+button-expand.active {
     background-color: lightgray;
 }
 
@@ -305,13 +305,13 @@ button.active {
 
 .strat-page-img {
     display: inline-block;
-    width: 370px;
+    width: 400px;
     margin-left: 100px;
 }
 
 .rounded-img {
-    border: 1px solid black;
-    border-radius: 30px;
+    border: 0.5px solid black;
+    border-radius: 20px;
 }
 
 .strategy-title {
@@ -356,7 +356,7 @@ button.active {
 .decision-box,
 .response-box {
     padding: 20px;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     text-align: center;
 }
 
@@ -403,7 +403,7 @@ button.active {
 .decision-box,
 .response-box {
     padding: 20px;
-    border: 1px solid black;
+    border: 0.5px solid black;
     border-radius: 20px;
     margin: 10px;
     cursor: pointer;
@@ -413,7 +413,7 @@ button.active {
     width: 40%;
     background-color: #ccccff;
     padding: 20px;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     border-radius: 20px;
     text-align: center;
     font-family: 'Poppins';
@@ -480,7 +480,7 @@ button.active {
 .blue-box {
     background-color: #007BFF;
     color: white;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     cursor: text;
     padding: 20px;
     border-radius: 20px;
@@ -493,9 +493,65 @@ button.active {
 }
 
 .strategy-info {
-    text-align: center;
+    text-align: left;
     margin: 20px;
     font-family: 'Poppins';
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#button-expand {
+    background: #D1C9BE;
+    border: 0.5px solid black;
+    margin: 10px;
+    font-family: 'Poppins';
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.avoid-box {
+    margin: 10px;
+}
+
+.collapsible {
+    color: #000;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content-expand {
+    padding: 20px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    border: 0.5px solid #000;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible:after {
+    content: '\02795';
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+#button-expand.active:after {
+    content: "\2796";
 }
 
 .breakdown-container {
@@ -511,6 +567,7 @@ button.active {
     margin: 20px;
     width: 600px;
     font-family: 'Poppins';
+    border: 0.5px solid #000;
 }
 
 .breakdown h3 {
@@ -551,6 +608,11 @@ button.active {
     flex-direction: column;
 }
 
+.strategy-section {
+    justify-content: center;
+    align-items: center;
+}
+
 .quiz-container {
     width: 80%;
     max-width: 600px;
@@ -559,6 +621,8 @@ button.active {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins';
+    margin-bottom: 80px;
 }
 
 .quiz-title {
